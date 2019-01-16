@@ -86,6 +86,9 @@ int main (int argc, char **argv)
    if (strcmp("quit\n",buf)==0)  {
    	cout<<"The client has quit\n";
    }
+   if (strcmp("delete\n",buf)==0)  {
+   	cout<<"Filename given to delete is: "<<token<<endl;
+   }
 
    if (strcmp("ls\n",buf)==0)  {
 	FILE *in;
