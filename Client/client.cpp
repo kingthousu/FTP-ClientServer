@@ -89,8 +89,17 @@ main(int argc, char **argv)
         cout<<"\n";
    }
   else if (strcmp("delete\n",sendline)==0)  {
-   	system("ls");
-        cout<<"\n";
+   	char check[MAXLINE]="1";
+			t = strtok(NULL," \n");
+			recv(sockfd,check,MAXLINE,0);
+			if(strcmp("0",check) == 0)
+			{
+				cout << "File Cannot Be Deleted: " << endl;
+			}
+			else
+			{
+				cout << "File Deleted Successfully" << endl;
+			}
    }
  else if (strcmp("mkdir\n",sendline)==0)  {
    	system("ls");
