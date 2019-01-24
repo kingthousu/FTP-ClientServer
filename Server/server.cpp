@@ -116,7 +116,7 @@ int main (int argc, char **argv)
 	//cout<<"file closed\n";
 	 
    }
-  if(strcmp("mkdir", buf) == 0)
+  if(strcmp("mkdir", token) == 0)
 		{
 			char check0[MAXLINE]="0",check1[MAXLINE]="1";
 
