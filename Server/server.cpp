@@ -115,6 +115,21 @@ int main (int argc, char **argv)
 	//cout<<"file closed\n";
 	 
    }
+  if(strcmp("mkdir", buf) == 0)
+		{
+			char check0[MAXLINE]="0",check1[MAXLINE]="1";
+
+			token = strtok(NULL, " \n");
+			if (mkdir(token, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH) < 0)
+			{
+			    send(connfd, check0, MAXLINE, 0);
+			}
+			else
+			{
+				send(connfd, check1, MAXLINE, 0);
+			}
+		}
+
 
    if (strcmp("pwd\n",buf)==0)  {
    	char curr_dir[MAXLINE];
@@ -124,7 +139,7 @@ int main (int argc, char **argv)
 	//cout<<curr_dir<<endl;
    }
 
-   if (strcmp("cd",token)==0)  {
+   if (strcmp("cd",buf)==0)  {
 	token=strtok(NULL," \n");
 	cout<<"Path given is: "<<token<<endl;
 	if(chdir(token)<0){
