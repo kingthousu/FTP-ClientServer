@@ -90,7 +90,7 @@ main(int argc, char **argv)
 				{
 					break;
 				}
-				recv(server_socket, buff, 256,0);
+				recv(sockfd, buff, 256,0);
 				cout << buff;
 	    		bzero(buff, 256);
 	    	}
@@ -102,7 +102,7 @@ main(int argc, char **argv)
    }
   else if (strcmp("delete\n",sendline)==0)  {
    	char check[MAXLINE]="1";
-			t = strtok(NULL," \n");
+			token = strtok(NULL," \n");
 			recv(sockfd,check,MAXLINE,0);
 			if(strcmp("0",check) == 0)
 			{
