@@ -91,7 +91,7 @@ int main (int argc, char **argv)
    }
 
    if (strcmp("ls\n",buf)==0)  {
-	/*FILE *in;
+	FILE *in;
 	char temp[MAXLINE],port[MAXLINE];
 	int datasock;
 	data_port=data_port+1;
@@ -111,21 +111,9 @@ int main (int argc, char **argv)
 		
 	}
 	send(datasock,"0",MAXLINE,0);
-	pclose(in);*/
+	pclose(in);
 	//cout<<"file closed\n";
-	   FILE *in;
-			char temp[256];
-			if(!(in = popen("ls", "r")))
-			{
-				cout<<"error"<<endl;
-			}
-			while(fgets(temp, sizeof(temp), in)!=NULL)
-			{
-				send(datasock,"1",MAXLINE,0);
-				send(datasock, temp, MAXLINE, 0);
-			}
-			send(datasock,"0",MAXLINE,0);
-			pclose(in);
+	 
    }
 
    if (strcmp("pwd\n",buf)==0)  {
