@@ -69,7 +69,7 @@ main(int argc, char **argv)
    }
 
    else if (strcmp("ls\n",sendline)==0)  {
-   	char buff[MAXLINE],check[MAXLINE]="1",port[MAXLINE];
+   	/*char buff[MAXLINE],check[MAXLINE]="1",port[MAXLINE];
 	int data_port,datasock;
 	recv(sockfd, port, MAXLINE,0);				//reciening data connection port
 	data_port=atoi(port);
@@ -81,7 +81,19 @@ main(int argc, char **argv)
 		recv(datasock, buff, MAXLINE,0);
 		cout<<buff;
 	}
-	
+	*/
+	   char buff[256],check[256]="1";
+	    	while(strcmp("1",check) == 0)
+	    	{
+	    		recv(sockfd,check,256,0);
+				if(strcmp("0",check) == 0)
+				{
+					break;
+				}
+				recv(server_socket, buff, 256,0);
+				cout << buff;
+	    		bzero(buff, 256);
+	    	}
    }
 	
    else if (strcmp("!ls\n",sendline)==0)  {
