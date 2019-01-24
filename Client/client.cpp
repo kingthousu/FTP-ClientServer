@@ -88,6 +88,16 @@ main(int argc, char **argv)
    	system("ls");
         cout<<"\n";
    }
+  else if (strcmp("delete\n",sendline)==0)  {
+   	system("ls");
+        cout<<"\n";
+   }
+ else if (strcmp("mkdir\n",sendline)==0)  {
+   	system("ls");
+        cout<<"\n";
+   }
+	 
+
 
    else if (strcmp("pwd\n",sendline)==0)  {
    	char curr_dir[MAXLINE];
