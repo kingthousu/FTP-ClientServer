@@ -113,7 +113,7 @@ main(int argc, char **argv)
 				cout << "File Deleted Successfully" << endl;
 			}
    }
- else if (strcmp("mkdir\n",sendline)==0)  {
+ else if (strcmp("mkdir\n",token)==0)  {
    	char check[MAXLINE]="1";
 	token = strtok(NULL," \n");
 	recv(sockfd,check,MAXLINE,0);
